@@ -109,7 +109,11 @@ const handleAuth = async (request, env) => {
 
     const params = new URLSearchParams({
       client_id: GITHUB_CLIENT_ID,
-      scope: 'repo,user',
+      // public_repo, not the upstream `repo`: ajbarea/ldqis is public, so the
+      // full private-repo grant is unneeded — and its "Full control of private
+      // repositories" consent screen made lab collaborators decline sign-in.
+      // research(2026-05): GitHub OAuth scopes; re-check if the repo goes private.
+      scope: 'public_repo,user',
       state: csrfToken,
     });
 

@@ -1,3 +1,10 @@
 name = "ldqis-cms-auth"
 main = "src/index.js"
 compatibility_date = "2023-03-24"
+
+# GITHUB_CLIENT_ID is the GitHub OAuth app's public client ID (it appears in every
+# /authorize redirect, so it is not a secret). It lives here, in tracked config, so
+# `wrangler deploy` always sets it — a dashboard-only var gets silently wiped by any
+# deploy whose config omits it. GITHUB_CLIENT_SECRET stays a Worker secret (never here).
+[vars]
+GITHUB_CLIENT_ID = "Ov23li8E07LYpSWREIaQ"

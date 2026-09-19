@@ -8,3 +8,5 @@ compatibility_date = "2023-03-24"
 # deploy whose config omits it. GITHUB_CLIENT_SECRET stays a Worker secret (never here).
 [vars]
 GITHUB_CLIENT_ID = "Ov23li8E07LYpSWREIaQ"
+# Hostnames whose /admin may use this Worker (matched against the CMS's site_id).
+ALLOWED_DOMAINS = "ajbarea.github.io, ldqis.github.io, dataqualitylabs.com, www.dataqualitylabs.com"
